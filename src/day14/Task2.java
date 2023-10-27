@@ -15,18 +15,14 @@ public class Task2 {
         List<String> people = new ArrayList<>();
         while(scanner.hasNextLine()){
             String person = scanner.nextLine();
-            String[] list = person.split("\n");
-            people.addAll(Arrays.asList(list));
-        }
-        for (String person : people) {
-            String[] years = person.split(" ");
-            int year = Integer.parseInt(years[1]);
+            String[] list = person.split(" ");
 
-            if (year < 0) {
-                System.out.println("Некорректный входной файл");
+            if (Integer.parseInt(list[1])<0){
                 throw new NumberFormatException();
             }
+            people.add(person);
         }
+
         return people;
 
     }
@@ -36,7 +32,7 @@ public class Task2 {
         List<String> people = new ArrayList<>();
         try {
             people = parseFileToStringList(file);
-            System.out.println(people.get(2));
+            System.out.println(people);
         }catch(FileNotFoundException e){
             System.out.println("Файл не найден");
         }
