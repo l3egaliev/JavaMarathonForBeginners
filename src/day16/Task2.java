@@ -35,7 +35,7 @@ public class Task2 {
 
         }
         writer.close();
-        
+
 
     }
 }
